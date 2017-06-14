@@ -1,0 +1,64 @@
+ul,li{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.shortcut-menu{
+	border: solid 1px #e5e5e5;
+}
+.shortcut-menu td{
+	padding: 20px;
+}
+.shortcut-tree{
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+}
+.tree-dragbox{
+	height: 100%;
+	overflow-y: auto;
+}
+.tree-drag{
+	position: relative;
+}
+.tree-list{
+	cursor: n-resize;
+	border: 1px dashed  #cdcdcd;
+	padding: 5px 12px;
+	line-height: 20px;
+	margin-bottom: 8px;
+	background-color: #fff;
+	position: relative;
+}
+.tree-list .tree-delete-btn{
+	position: absolute;
+	top: 5px;
+	right: 12px;
+	line-height: 20px;
+	display: none;
+	cursor: pointer;
+}
+.tree-list.bg{
+	background-color: #fafafa;
+	border-color: #38f;
+}
+.tree-list:hover{
+	border-color: #38f;
+}
+.tree-list:hover .tree-delete-btn{
+	display: block;
+}
+.tree-delete-btn:hover{
+	color: #38f;
+}
+.tree-list .edit-input{
+	position: absolute;
+	top: 0;
+	left: 12px;
+	width: 160px;
+	height: 30px;
+	line-height: 30px;
+	outline: none;
+	background-color: #fafafa;
+	border: none;
+}

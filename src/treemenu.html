@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=9" />
+	<title>system page template</title>
+	<link href="./source/plugins/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<link href="./source/plugins/ztree/css/zTreeStyle/zTreeStyle.css" rel="stylesheet">
+	<link href="./source/css/treemenu.css" rel="stylesheet">
+	<!--[if lt IE 9]>
+	<script src="./source/plugins/lib/js/html5.min.js"></script>
+	<script src="./source/plugins/lib/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  设置快捷菜单设置
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">快捷菜单设置</h4>
+      </div>
+      <div class="modal-body">
+	  	<table class="shortcut-menu" border="1" cellspacing="0" cellpadding="0" width="100%" height="360">
+	  		<tr>
+	  			<td valign="top" width="50%"> 
+	  				<div class="shortcut-tree ztree" id="shortcutTree"></div>
+	  			</td>
+	  			<td valign="top">
+	  				<div class="tree-dragbox">
+		  				<ul class="tree-drag" id="treeDrag"> 
+		  					
+		  				</ul>
+	  				</div>
+	  			</td>
+	  		</tr>
+	  	</table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">保存</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="./source/plugins/lib/jquery-1.12.4.min.js"></script>
+<script src="./source/plugins/lib/jquery-ui.min.js"></script>
+<script src="./source/plugins/lib/Tdrag.min.js"></script>
+<script src="./source/plugins/ztree/js/jquery.ztree.all.min.js"></script>
+<script src="./source/plugins/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="./source/plugins/lib/jquery-placeholder.min.js"></script>
+<script src="./source/js/treemenu.js"></script>
+<script>
+	$(function(){
+		$("input,textarea").placeholder();
+	})
+</script>
+</body>
+</html>

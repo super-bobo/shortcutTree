@@ -1,0 +1,41 @@
+ul,li{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.nav-stacked>li+li{
+	margin-top: 0;
+}
+.leftmenu{
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	background-color: #f8f8f8;
+}
+.leftmenu a{
+	display: block;
+	padding: 10px 15px;
+}
+.leftmenu a:hover{
+	text-decoration: none;
+}
+.menu-fir>li, .menu-sec>li, .menu-thir>li, .menu-fourth>li{
+	position: relative;
+	width: 200px;
+}
+.menu-isshow{
+	background-color: #eeeeee;
+	width: 200px;
+}
+.menu-sec, .menu-thir,.menu-fourth, .menu-fifth{
+	position: absolute;
+	top: 0;
+	left: 200px;
+	display: none;
+}
+.menu-sec li.active>a, .menu-thir li.active>a, .menu-fourth li.active>a, .menu-fifth li.active>a{
+	background-color: #337ab7;
+	color: #fff;
+	text-decoration: none;
+}
