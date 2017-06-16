@@ -15,7 +15,7 @@ ul,li{
 	overflow: auto;
 }
 .tree-dragbox{
-	height: 100%;
+	overflow-x: hidden;
 	overflow-y: auto;
 }
 .tree-drag{
@@ -23,12 +23,14 @@ ul,li{
 }
 .tree-list{
 	cursor: n-resize;
-	border: 1px dashed  #cdcdcd;
-	padding: 5px 12px;
-	line-height: 20px;
 	margin-bottom: 8px;
 	background-color: #fff;
 	position: relative;
+}
+.tree-list .text{
+	padding: 5px 12px;
+	line-height: 20px;
+	border: 1px dashed  #cdcdcd;	
 }
 .tree-list .tree-delete-btn{
 	position: absolute;
@@ -38,11 +40,16 @@ ul,li{
 	display: none;
 	cursor: pointer;
 }
+.tree-helper{
+	background-color: #f8f8f8;
+	border: 1px dashed  #cdcdcd;
+	margin-bottom: 8px;
+}
 .tree-list.bg{
 	background-color: #fafafa;
 	border-color: #38f;
 }
-.tree-list:hover{
+.tree-list .text:hover{
 	border-color: #38f;
 }
 .tree-list:hover .tree-delete-btn{
@@ -53,7 +60,7 @@ ul,li{
 }
 .tree-list .edit-input{
 	position: absolute;
-	top: 0;
+	top: 1px;
 	left: 12px;
 	width: 160px;
 	height: 30px;

@@ -45,15 +45,14 @@
 		};
 		this.ztree = $.fn.zTree.init($("#shortcutTree"), setting, zNodes);
 
-		$("#treeDrag").sortable({
-			containment	: '#treeDrag',
-			update		: function(){//拖动顺序后的回调
+		$("#treeDrag").dragsort({
+			dragEnd: function(){//拖动顺序后的回调
 				shortcutTree.setCode();
 			},
-			stop: function(e,ui) {
-				ui.item.css({'top':'0','left':'0'});
-			}
+			dragBetween: true,
+			placeHolderTemplate: '<li class="tree-helper"></li>'
 		});
+
 
 		$("#treeDrag").on('dblclick', ".tree-list", function(){//编辑
 			shortcutTree.editHtml($(this));
@@ -96,7 +95,7 @@
 		var getTree = $.fn.zTree.getZTreeObj("shortcutTree");
 		var nodes = getTree.getCheckedNodes(true);
 		var dragWrapper = $("#treeDrag");
-		var liHtml = '<li class="tree-list" statusid="' + tid + '"> <div class="text">'+ name +'</div><span class="tree-delete-btn glyphicon glyphicon-remove-circle" aria-hidden="true"></span></li>'
+		var liHtml = '<li class="tree-list" statusid="' + tid + '"> <div class="text">'+ name +'</div><span class="tree-delete-btn glyphicon glyphicon-remove-circle" aria-hidden="true"></span></li>';
 		if(checkType){
 			dragWrapper.prepend(liHtml);
 		}else{
@@ -125,8 +124,7 @@
 	shortcutTree.deleteHtml = function(id){
 		var getTree = $.fn.zTree.getZTreeObj("shortcutTree");
 		var node = getTree.getNodeByParam("id", id);
-		getTree.checkNode(node, true, true);
-		$("#" + node.tId).find('[treenode_check]').trigger('click');
+		$("#" + node.tId).find("#" + node.tId + '_check').trigger('click');
 	};
 
 	shortcutTree.editHtml = function(currnetNode){
